@@ -14,7 +14,7 @@ class MainPage extends StatelessWidget {
       home: Scaffold(
         //resizeToAvoidBottomInset: false,
         appBar: AppBar(
-          title: Text('SMS SPAMMER'),
+          title: Text('Sms(String sms){ return Sms(sms); }'),
         ),
         body: Center(
           child: SingleChildScrollView(
@@ -188,6 +188,7 @@ class DelayField extends StatelessWidget {
       child: Container(
         width: 180,
         child: TextField(
+          keyboardType: TextInputType.number,
           textAlign: TextAlign.center,
           maxLength: 7,
           //expands: true,
@@ -251,7 +252,7 @@ class Buttons extends StatelessWidget {
 Widget myTexview() {
   return Container(
     child: Text(
-      'SPAM!!',
+      'UwU',
       style: TextStyle(fontSize: 120),
     ),
   );
