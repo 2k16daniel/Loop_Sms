@@ -16,14 +16,11 @@ class MainPage extends StatelessWidget {
         appBar: AppBar(
           title: Text('Sms(String sms){ return Sms(sms); }'),
         ),
-        body: Center(
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                WholeUI(),
-              ],
-            ),
+        body: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+              WholeUI(),
+            ],
           ),
         ),
       ),
@@ -48,26 +45,29 @@ class _WholeUIState extends State<WholeUI> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Column(
-        children: <Widget>[
-          myTexview(),
-          NumberField(),
-          SmsField(),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: RepeatitionField(),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: DelayField(),
-              ),
-            ],
-          ),
-          Buttons(),
-        ],
+      child: Padding(
+        padding: const EdgeInsets.only(top: 45),
+        child: Column(
+          children: <Widget>[
+            myTexview(),
+            NumberField(),
+            SmsField(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: RepeatitionField(),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: DelayField(),
+                ),
+              ],
+            ),
+            Buttons(),
+          ],
+        ),
       ),
     );
   }
@@ -257,3 +257,5 @@ Widget myTexview() {
     ),
   );
 }
+
+// start of logic line
