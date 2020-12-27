@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sms/sms.dart';
 
 void main() {
   runApp(MainPage());
@@ -211,6 +212,10 @@ class DelayField extends StatelessWidget {
 class Buttons extends StatelessWidget {
   const Buttons({Key key}) : super(key: key);
 
+  void sendme() {
+    _send('09563162359', 'hello');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -232,9 +237,10 @@ class Buttons extends StatelessWidget {
               ),
             ),
             Padding(
+              // send button
               padding: const EdgeInsets.all(8.0),
               child: RaisedButton(
-                onPressed: () {},
+                onPressed: sendme,
                 color: Colors.green[600],
                 child: Icon(
                   Icons.arrow_forward_ios,
@@ -259,3 +265,8 @@ Widget myTexview() {
 }
 
 // start of logic line
+_send(String address, String body) {
+  SmsSender sender = new SmsSender();
+  SmsMessage message = new SmsMessage(address, body);
+  sender.sendSms(message);
+}
