@@ -43,7 +43,7 @@ before_script:
   # Add custom bins to the path
   - export PATH="$PATH:$FLUTTER_BIN"
 script:
-  - flutter flutter doctor --android-licenses
+  - flutter doctor --android-licenses
   - flutter doctor
 
 cache:
