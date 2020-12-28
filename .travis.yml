@@ -40,7 +40,7 @@ before_script:
   - export FLUTTER_BIN="$HOME/devtools/flutter/bin"
 
   # Add custom bins to the path
-  - export $PATH="$PATH:FLUTTER_BIN"
+  - export $PATH="$PATH:$FLUTTER_BIN"
 script:
   - ./flutter/bin/flutter -v build apk
 
