@@ -63,3 +63,6 @@ cache:
 
     # Android build cache (see http://tools.android.com/tech-docs/build-cache)
     - $HOME/.android/build-cache
+
+env:
+  - ANDROID_HOME=$HOME/android-sdk
