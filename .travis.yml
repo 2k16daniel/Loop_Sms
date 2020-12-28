@@ -42,7 +42,7 @@ before_script:
   # Add custom bins to the path
   - export $PATH="$PATH:$FLUTTER_BIN"
 script:
-  - ./flutter/bin/flutter -v build apk
+  - flutter doctor
 
 cache:
   directories:
