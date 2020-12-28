@@ -18,12 +18,13 @@ install:
   # Latest version of build-tools available here: https://developer.android.com/studio/releases/build-tools.html
   - echo y | $HOME/android-cmdline-tools/tools/bin/sdkmanager --sdk_root=$HOME/android-sdk 'build-tools;30.0.2' > /dev/null
   - echo y | $HOME/android-cmdline-tools/tools/bin/sdkmanager --sdk_root=$HOME/android-sdk 'platforms;android-30' > /dev/null
+  
   # Install Gradle
-  - wget https://services.gradle.org/distributions/gradle-6.5-bin.zip 
+  - if test ! -e $HOME/gradle-6.5-bin.zip ; then wget https://services.gradle.org/distributions/gradle-6.5-bin.zip > $HOME/gradle-6.5-bin.zip ; fi
   - unzip -qq -n ./gradle-6.5-bin.zip -d $HOME/.gradle/
 
   # Install flutter
-  - wget https://storage.googleapis.com/flutter_infra/releases/dev/linux/flutter_linux_1.26.0-1.0.pre-dev.tar.xz
+  - if test ! -e $HOME/flutter_linux_1.26.0-1.0.pre-dev.tar.xz ; then wget https://storage.googleapis.com/flutter_infra/releases/dev/linux/flutter_linux_1.26.0-1.0.pre-dev.tar.xz > $HOME/flutter_linux_1.26.0-1.0.pre-dev.tar.xz ; fi
   - tar -xf flutter_linux_1.26.0-1.0.pre-dev.tar.xz -C $HOME/devtools/
 
 jdk: oraclejdk8
@@ -42,6 +43,7 @@ before_script:
   # Add custom bins to the path
   - export PATH="$PATH:$FLUTTER_BIN"
 script:
+  - flutter flutter doctor --android-licenses
   - flutter doctor
 
 cache:
