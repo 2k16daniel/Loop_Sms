@@ -36,11 +36,11 @@ addons:
       - libstdc++6
       - fonts-droid
 before_script:
-  - wget https://services.gradle.org/distributions/gradle-6.5-bin.zip
-  - unzip -qq gradle-6.5-bin.zip
-  - export GRADLE_HOME=$PWD/gradle-6.5
-  - export PATH=$GRADLE_HOME/bin:$PATH
-  - git clone https://github.com/flutter/flutter.git -b dev
+  # flutter bin config
+  - export FLUTTER_BIN="$HOME/devtools/flutter/bin"
+
+  # Add custom bins to the path
+  - export $PATH="$PATH:FLUTTER_BIN"
 script:
   - ./flutter/bin/flutter -v build apk
 
