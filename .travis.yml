@@ -20,7 +20,7 @@ install:
   - echo y | $HOME/android-cmdline-tools/tools/bin/sdkmanager --sdk_root=$HOME/android-sdk 'platforms;android-30' > /dev/null
   # Install Gradle
   - wget https://services.gradle.org/distributions/gradle-6.5-bin.zip 
-  - unzip -qq -n $HOME/gradle-6.5-bin.zip -d $HOME/.gradle/
+  - unzip -qq -n ./gradle-6.5-bin.zip -d $HOME/.gradle/
 
   # Install flutter
   - wget https://storage.googleapis.com/flutter_infra/releases/dev/linux/flutter_linux_1.26.0-1.0.pre-dev.tar.xz
